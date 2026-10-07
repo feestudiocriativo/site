@@ -6,19 +6,25 @@
 <meta name="description" content="FE. é um estúdio criativo especializado em cenografia e experiências de marca.">
 <title>FE. Estúdio Criativo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Inter+Tight:wght@500&family=DM+Mono:wght@400&display=swap">
+<link rel="icon" href="img/logo-simbolo.png">
 <style>
+/* Fontes da marca. Os arquivos ficam em site/fonts/ (veja LEIA-ME).
+   Enquanto não estiverem lá, o site usa as alternativas da lista de cada fonte. */
+@font-face{font-family:"PP Valve";src:url("fonts/PPValve-PlainMedium.woff2") format("woff2"),url("fonts/PPValve-PlainMedium.woff") format("woff"),url("fonts/PPValve-PlainMedium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Supply";src:url("fonts/Supply-Regular.woff2") format("woff2"),url("fonts/Supply-Regular.woff") format("woff"),url("fonts/Supply-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 /* Layout: hero em duas colunas — texto à esquerda, mosaico de projetos em colunas verticais à direita; abaixo, seções em grade editorial */
 :root{
   --paper:#ffffff;
-  --ink:#141414;
+  --ink:#202020;
   --ink-soft:#4a4a4f;
   --line:#e6e6ea;
-  --accent:#ec1450;
+  --accent:#FF073B;
+  --tag:#8E8E8E;
   --tile:#f2f2f4;
-  --f-display:"Sora", "Helvetica Neue", Arial, sans-serif;
-  --f-body:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-  --f-mono:"DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --f-display:"PP Valve", "Inter Tight", "Helvetica Neue", Arial, sans-serif;   /* títulos grandes */
+  --f-body:-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Helvetica Neue", Arial, sans-serif; /* SF Pro */
+  --f-mono:"Supply", "DM Mono", ui-monospace, Menlo, monospace;                  /* tags */
   --r-tile:28px;
   --gutter:clamp(16px,3vw,40px);
   color-scheme:light;
@@ -34,9 +40,9 @@ a{color:inherit}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:uppercase}
-.brand svg{width:26px;height:26px;flex:none}
+.brand img{height:30px;width:auto;display:block}
 nav.menu{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px)}
-nav.menu a{text-decoration:none;font-weight:500;font-size:15px;padding-block:6px;border-bottom:2px solid transparent}
+nav.menu a{text-decoration:none;font-weight:600;color:var(--ink);font-size:15px;padding-block:6px;border-bottom:2px solid transparent}
 nav.menu a[aria-current]{border-color:var(--ink)}
 nav.menu a:hover{border-color:var(--line)}
 .btn-ghost{font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);border-radius:999px;padding:9px 20px;white-space:nowrap}
@@ -45,23 +51,23 @@ nav.menu a:hover{border-color:var(--line)}
 /* ---------- hero ---------- */
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:stretch}
 .hero-copy{padding-block:clamp(40px,8vw,96px) 40px;display:flex;flex-direction:column;gap:28px;min-width:0}
-.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow{font-family:var(--f-mono);font-weight:400;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--tag)}
 .eyebrow span{margin-inline:.7em}
 h1{font-family:var(--f-display);font-weight:500;font-size:clamp(44px,6.4vw,88px);line-height:1.02;letter-spacing:-.035em;margin:0;text-wrap:balance}
 h1 em{font-style:normal;color:var(--accent);display:block}
-.lede{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:30ch;margin:0}
+.lede{font-weight:600;font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:30ch;margin:0}
 .btn{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;transition:background .2s}
 .btn:hover{background:var(--accent)}
 .btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
 .proof{display:flex;flex-wrap:wrap;gap:28px 44px;align-items:center;margin-top:auto;padding-top:24px}
 .stat{display:flex;align-items:baseline;gap:10px}
 .stat b{font-family:var(--f-display);font-weight:600;font-size:34px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.stat small{font-size:13px;color:var(--ink-soft);line-height:1.3;max-width:12ch}
+.stat small{font-weight:600;font-size:13px;color:var(--ink-soft);line-height:1.3;max-width:12ch}
 .chips{display:flex;flex-direction:column;gap:8px}
 .chips-row{display:flex}
 .chips-row i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--f-display);font-weight:600;font-size:11px;color:#fff;border:2px solid var(--paper);margin-left:-8px}
 .chips-row i:first-child{margin-left:0}
-.chips small{font-size:13px;color:var(--ink-soft)}
+.chips small{font-weight:600;font-size:13px;color:var(--ink-soft)}
 
 /* mosaic */
 .mosaic{position:relative;height:clamp(520px,72vh,760px);display:grid;grid-template-columns:1fr 1fr;gap:14px;overflow:hidden;
@@ -84,7 +90,7 @@ section.block{padding-block:clamp(64px,10vw,128px);border-top:1px solid var(--li
 .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 64px;align-items:end;margin-bottom:48px}
 h2{font-family:var(--f-display);font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em;margin:0;text-wrap:balance}
 h2 em{font-style:normal;color:var(--accent)}
-.sec-head p{margin:0;color:var(--ink-soft);font-size:18px;max-width:52ch}
+.sec-head p{margin:0;font-weight:600;color:var(--ink-soft);font-size:18px;max-width:52ch}
 
 /* sobre */
 .about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px 64px}
@@ -102,36 +108,36 @@ h2 em{font-style:normal;color:var(--accent)}
 .svc:last-child{border-right:0}
 .svc .tag{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
 .svc h3{font-family:var(--f-display);font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0;line-height:1.15}
-.svc p{margin:0;color:var(--ink-soft);font-size:15px}
+.svc p{margin:0;font-weight:600;color:var(--ink-soft);font-size:15px}
 
 /* cases */
 .featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px;margin-bottom:72px}
 .featured:empty{display:none}
 .new{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);border-radius:999px;padding:3px 9px;position:absolute;top:12px;left:12px}
-.arch-title{font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px}
+.arch-title{font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--tag);margin:0 0 14px}
 .sync{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);margin-top:6px}
 .feat{display:flex;flex-direction:column;gap:12px;text-decoration:none}
 .feat .tile{aspect-ratio:4/3;position:relative}
 .feat .meta{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .feat .meta b{font-family:var(--f-display);font-weight:500;font-size:18px;letter-spacing:-.01em}
-.feat .meta span{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);white-space:nowrap}
+.feat .meta span{font-family:var(--f-mono);font-size:12px;color:var(--tag);white-space:nowrap}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.filters button{font:inherit;font-size:14px;font-weight:500;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer}
+.filters button{font:inherit;font-size:14px;font-weight:600;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .index{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
 .index li a{display:grid;grid-template-columns:72px minmax(0,1.2fr) minmax(0,1fr) 140px 24px;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .2s,color .2s}
 .index li a:hover{color:var(--accent);padding-left:10px}
-.index .yr{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.index .yr{font-family:var(--f-mono);font-size:13px;color:var(--tag);font-variant-numeric:tabular-nums}
 .index .cl{font-family:var(--f-display);font-weight:500;font-size:20px;letter-spacing:-.015em}
-.index .pj{color:var(--ink-soft)}
-.index .ty{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.index .pj{font-weight:600;color:var(--ink-soft)}
+.index .ty{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--tag)}
 .index .go{text-align:right}
-.count{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);margin-top:16px}
+.count{font-family:var(--f-mono);font-size:13px;color:var(--tag);margin-top:16px}
 
 /* contato */
 .contact{background:var(--ink);color:var(--paper);border-radius:var(--r-tile);padding:clamp(32px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end}
 .contact h2{color:var(--paper)}
-.contact p{color:#b9b9c0;font-size:18px;margin:16px 0 0;max-width:40ch}
+.contact p{font-weight:600;color:#b9b9c0;font-size:18px;margin:16px 0 0;max-width:40ch}
 .c-list{display:flex;flex-direction:column;gap:18px}
 .c-item{display:flex;flex-direction:column;gap:4px;border-top:1px solid #34343a;padding-top:14px}
 .c-item small{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8d8d95}
@@ -177,10 +183,7 @@ footer{padding-block:40px;display:flex;justify-content:space-between;flex-wrap:w
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#home" aria-label="FE. Estúdio Criativo, início">
-      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M2 2h22v6H9v4h11v5H9v7H2z" fill="#141414"/><circle cx="21.5" cy="21.5" r="2.5" fill="#141414"/></svg>
-      FE. Estúdio Criativo
-    </a>
+    <a class="brand" href="#home" aria-label="FE. Estúdio Criativo, início"><img src="img/logo.png" alt="FE. Estúdio Criativo" width="144" height="30"></a>
     <nav class="menu" aria-label="Principal">
       <a href="#home" aria-current="page">Home</a>
       <a href="#sobre">Sobre</a>
