@@ -28,12 +28,25 @@ const guessType = (t) => (TYPES.find(([, re]) => re.test(t)) || ["Projetos"])[0]
 const norm = (s) =>
   s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
-// "TV Globo - Globoplay | The Town 2023" → cliente "TV Globo", título "Globoplay | The Town 2023"
+// "Tostitos | Rock in Rio 2024 | Rio de Janeiro" → cliente, projeto e local
+// Também aceita o formato "Cliente - Projeto".
 function splitTitle(full) {
-  const m = full.split(/\s+[-–—]\s+/);
-  if (m.length > 1) return { client: m[0].trim(), title: m.slice(1).join(" - ").trim() };
-  return { client: full.trim(), title: "" };
+  const parts = full.split(/\s+[|–—-]\s+/).map((s) => s.trim()).filter(Boolean);
+  if (parts.length === 1) return { client: parts[0], title: "", place: "" };
+  return { client: parts[0], title: parts[1], place: parts.slice(2).join(", ") };
 }
+
+// O projeto do Behance é o mesmo que já está no site?
+function sameProject(x, client, title, link) {
+  if (x.behance && x.behance === link) return true;
+  const xc = norm(x.client), c = norm(client);
+  if (!xc || !c || !(xc === c || xc.includes(c) || c.includes(xc))) return false;
+  const xt = norm(x.title), t = norm(title);
+  if (!xt || !t) return xt === t;
+  return xt.includes(t) || t.includes(xt);
+}
+
+const isOldSite = (u) => !u || /fevieira\.com/.test(u);
 
 const cdata = (s) => (s || "").replace(/^<!\[CDATA\[|\]\]>$/g, "").trim();
 const tag = (xml, name) => cdata((xml.match(new RegExp(`<${name}>([\\s\\S]*?)</${name}>`)) || [])[1]);
@@ -60,27 +73,41 @@ async function fetchFeed() {
 }
 
 const data = JSON.parse(await readFile(FILE, "utf8"));
-const list = data.projects;
+let list = data.projects;
 const feed = await fetchFeed();
-let added = 0, updated = 0;
+let added = 0, updated = 0, merged = 0;
+
+// Ajusta entradas antigas do Behance gravadas antes do formato "Cliente | Projeto | Local"
+// e junta com o projeto equivalente que já estava no site, se houver.
+for (const b of list.filter((x) => x.source === "behance" && / \| /.test(x.client))) {
+  Object.assign(b, splitTitle(b.client));
+}
+for (const b of list.filter((x) => x.source === "behance")) {
+  const twin = list.find((x) => x !== b && x.source !== "behance" && sameProject(x, b.client, b.title, b.behance));
+  if (!twin) continue;
+  twin.behance = b.behance;
+  if (!twin.img) twin.img = b.img;
+  if (isOldSite(twin.url)) twin.url = b.behance;
+  if (!twin.place && b.place) twin.place = b.place;
+  list = list.filter((x) => x !== b);
+  merged++;
+}
 
 for (const p of feed) {
-  const { client, title } = splitTitle(p.full);
-  const key = norm(p.full);
-  const existing = list.find(
-    (x) => x.behance === p.link || norm(`${x.client} ${x.title}`) === key || norm(x.client) === key ||
-      (x.url && norm(x.url.split("/").pop()) === norm(p.link.split("/").pop()))
-  );
+  const { client, title, place } = splitTitle(p.full);
+  const existing = list.find((x) => sameProject(x, client, title, p.link));
   if (existing) {
     let changed = false;
     if (!existing.behance) { existing.behance = p.link; changed = true; }
     if (!existing.img && p.img) { existing.img = p.img; changed = true; }
+    if (isOldSite(existing.url)) { existing.url = p.link; changed = true; }
+    if (!existing.place && place) { existing.place = place; changed = true; }
     if (changed) updated++;
     continue;
   }
   const year = Number((p.full.match(/\b(20\d{2})\b/) || [])[1]) || p.date.getFullYear();
   list.push({
-    client, title, year,
+    client, title, place, year,
     type: guessType(p.full + " " + p.text),
     img: p.img, url: p.link, behance: p.link,
     published: p.date.toISOString().slice(0, 10),
@@ -89,6 +116,7 @@ for (const p of feed) {
   added++;
 }
 
+data.projects = list;
 data.updated = new Date().toISOString();
 await writeFile(FILE, JSON.stringify(data, null, 2) + "\n");
-console.log(`Behance: ${feed.length} no feed · ${added} novos · ${updated} atualizados · ${list.length} no total`);
+console.log(`Behance: ${feed.length} no feed · ${added} novos · ${updated} atualizados · ${merged} duplicados juntados · ${list.length} no total`);
