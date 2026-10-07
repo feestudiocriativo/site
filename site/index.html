@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="FE. é um estúdio criativo especializado em cenografia e experiências de marca.">
+<title>FE. Estúdio Criativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap">
+<style>
+/* Layout: hero em duas colunas — texto à esquerda, mosaico de projetos em colunas verticais à direita; abaixo, seções em grade editorial */
+:root{
+  --paper:#ffffff;
+  --ink:#141414;
+  --ink-soft:#4a4a4f;
+  --line:#e6e6ea;
+  --accent:#ec1450;
+  --tile:#f2f2f4;
+  --f-display:"Sora", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --r-tile:28px;
+  --gutter:clamp(16px,3vw,40px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{padding-inline:var(--gutter);max-width:1360px;margin-inline:auto}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:uppercase}
+.brand svg{width:26px;height:26px;flex:none}
+nav.menu{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px)}
+nav.menu a{text-decoration:none;font-weight:500;font-size:15px;padding-block:6px;border-bottom:2px solid transparent}
+nav.menu a[aria-current]{border-color:var(--ink)}
+nav.menu a:hover{border-color:var(--line)}
+.btn-ghost{font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);border-radius:999px;padding:9px 20px;white-space:nowrap}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- hero ---------- */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:stretch}
+.hero-copy{padding-block:clamp(40px,8vw,96px) 40px;display:flex;flex-direction:column;gap:28px;min-width:0}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow span{margin-inline:.7em}
+h1{font-family:var(--f-display);font-weight:500;font-size:clamp(44px,6.4vw,88px);line-height:1.02;letter-spacing:-.035em;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent);display:block}
+.lede{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:30ch;margin:0}
+.btn{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;transition:background .2s}
+.btn:hover{background:var(--accent)}
+.btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+.proof{display:flex;flex-wrap:wrap;gap:28px 44px;align-items:center;margin-top:auto;padding-top:24px}
+.stat{display:flex;align-items:baseline;gap:10px}
+.stat b{font-family:var(--f-display);font-weight:600;font-size:34px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat small{font-size:13px;color:var(--ink-soft);line-height:1.3;max-width:12ch}
+.chips{display:flex;flex-direction:column;gap:8px}
+.chips-row{display:flex}
+.chips-row i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--f-display);font-weight:600;font-size:11px;color:#fff;border:2px solid var(--paper);margin-left:-8px}
+.chips-row i:first-child{margin-left:0}
+.chips small{font-size:13px;color:var(--ink-soft)}
+
+/* mosaic */
+.mosaic{position:relative;height:clamp(520px,72vh,760px);display:grid;grid-template-columns:1fr 1fr;gap:14px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(transparent,#000 9%,#000 88%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 88%,transparent)}
+.col{display:flex;flex-direction:column;gap:14px;align-self:start;animation:drift 38s linear infinite}
+.col.b{animation-duration:46s;animation-direction:reverse}
+.mosaic:hover .col{animation-play-state:paused}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(calc(-50% - 7px))}}
+.tile{display:block;position:relative;border-radius:var(--r-tile);overflow:hidden;background:var(--tile);text-decoration:none;flex:none}
+.tile img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover img{transform:scale(1.04)}
+.tile .cap{position:absolute;left:12px;bottom:12px;right:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(20,20,20,.62);backdrop-filter:blur(6px);border-radius:999px;padding:6px 12px;opacity:0;transform:translateY(6px);transition:.25s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile:hover .cap,.tile:focus-visible .cap{opacity:1;transform:none}
+.t-tall{aspect-ratio:4/5}.t-mid{aspect-ratio:1/1}.t-wide{aspect-ratio:4/3}
+.dots{position:absolute;left:-22px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:space-around;pointer-events:none}
+.dots i{width:10px;height:10px;border:2px solid var(--accent);border-radius:50%;display:block}
+
+/* ---------- sections ---------- */
+section.block{padding-block:clamp(64px,10vw,128px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 64px;align-items:end;margin-bottom:48px}
+h2{font-family:var(--f-display);font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em;margin:0;text-wrap:balance}
+h2 em{font-style:normal;color:var(--accent)}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:18px;max-width:52ch}
+
+/* sobre */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px 64px}
+.about-body{display:flex;flex-direction:column;gap:18px;font-size:18px;color:var(--ink-soft);max-width:60ch}
+.about-body p{margin:0}
+.about-body strong{color:var(--ink);font-weight:600}
+.flow{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.flow span{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--ink)}
+.flow span.arrow{border:0;padding-inline:0;color:var(--accent)}
+
+/* serviços */
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+.svc{padding:28px 24px 32px 0;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line);padding-left:24px}
+.svc:first-child{padding-left:0}
+.svc:last-child{border-right:0}
+.svc .tag{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.svc h3{font-family:var(--f-display);font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0;line-height:1.15}
+.svc p{margin:0;color:var(--ink-soft);font-size:15px}
+
+/* cases */
+.featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px;margin-bottom:72px}
+.featured:empty{display:none}
+.new{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);border-radius:999px;padding:3px 9px;position:absolute;top:12px;left:12px}
+.arch-title{font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px}
+.sync{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);margin-top:6px}
+.feat{display:flex;flex-direction:column;gap:12px;text-decoration:none}
+.feat .tile{aspect-ratio:4/3;position:relative}
+.feat .meta{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.feat .meta b{font-family:var(--f-display);font-weight:500;font-size:18px;letter-spacing:-.01em}
+.feat .meta span{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{font:inherit;font-size:14px;font-weight:500;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.index{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.index li a{display:grid;grid-template-columns:72px minmax(0,1.2fr) minmax(0,1fr) 140px 24px;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .2s,color .2s}
+.index li a:hover{color:var(--accent);padding-left:10px}
+.index .yr{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.index .cl{font-family:var(--f-display);font-weight:500;font-size:20px;letter-spacing:-.015em}
+.index .pj{color:var(--ink-soft)}
+.index .ty{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.index .go{text-align:right}
+.count{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);margin-top:16px}
+
+/* contato */
+.contact{background:var(--ink);color:var(--paper);border-radius:var(--r-tile);padding:clamp(32px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h2{color:var(--paper)}
+.contact p{color:#b9b9c0;font-size:18px;margin:16px 0 0;max-width:40ch}
+.c-list{display:flex;flex-direction:column;gap:18px}
+.c-item{display:flex;flex-direction:column;gap:4px;border-top:1px solid #34343a;padding-top:14px}
+.c-item small{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8d8d95}
+.c-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.c-row a{font-family:var(--f-display);font-size:clamp(18px,2vw,24px);text-decoration:none;user-select:all;word-break:break-all}
+.c-row a:hover{color:var(--accent)}
+.copy{font:inherit;font-size:13px;font-weight:600;background:none;color:var(--paper);border:1px solid #4a4a52;border-radius:999px;padding:6px 14px;cursor:pointer;white-space:nowrap}
+.copy:hover{border-color:var(--paper)}
+footer{padding-block:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr}
+  .mosaic{height:520px}
+  .dots{display:none}
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc{padding-left:0;border-right:0;border-bottom:1px solid var(--line);padding-right:16px}
+  .svc:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+  .featured{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .index li a{grid-template-columns:56px minmax(0,1fr) 24px}
+  .index .pj,.index .ty{display:none}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  nav.menu a:not(.btn-ghost){display:none}
+  .sec-head,.about{grid-template-columns:1fr}
+  .mosaic{height:440px;gap:10px}.col{gap:10px}
+  .services{grid-template-columns:1fr}
+  .svc,.svc:nth-child(even){padding-left:0;border-left:0}
+}
+@media (max-width:440px){
+  .featured{grid-template-columns:1fr}
+  .proof{gap:20px 28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .col{animation:none}
+  .tile img,.btn,.index li a{transition:none}
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="FE. Estúdio Criativo, início">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M2 2h22v6H9v4h11v5H9v7H2z" fill="#141414"/><circle cx="21.5" cy="21.5" r="2.5" fill="#141414"/></svg>
+      FE. Estúdio Criativo
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#home" aria-current="page">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#cases">Cases</a>
+      <a class="btn-ghost" href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Cenografia<span>.</span>Marcas<span>.</span>Experiências</div>
+        <h1>Ideias que Ganham <em>Espaço.</em></h1>
+        <p class="lede">Somos um estúdio criativo especialista em cenografia e experiência de marca.</p>
+        <a class="btn" href="#cases">Conheça Nosso Trabalho <span class="arr" aria-hidden="true">→</span></a>
+        <div class="proof">
+          <div class="stat"><b id="statCount">33</b><small>projetos publicados desde 2017</small></div>
+          <div class="chips">
+            <div class="chips-row" aria-hidden="true">
+              <i style="background:#e4003a">GL</i><i style="background:#1d4fd8">HW</i><i style="background:#0b6b3a">SP</i><i style="background:#7a1fa2">BT</i><i style="background:#d31f26">CC</i>
+            </div>
+            <small>Globo, Huawei, Spaten, Boticário, Coca-Cola e mais</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="mosaic" aria-label="Projetos em destaque">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="col a" id="colA"></div>
+        <div class="col b" id="colB"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="sobre">
+    <div class="wrap about">
+      <h2>Do briefing ao <em>espaço</em> construído.</h2>
+      <div class="about-body">
+        <p>O FE. é um estúdio criativo especializado em projetos para eventos e experiências de marca. Transformamos conceitos em <strong>soluções visualmente impactantes e tecnicamente viáveis</strong>.</p>
+        <p>Trabalhamos lado a lado com agências de live marketing e marcas, cuidando do conceito, da modelagem 3D e das imagens que vendem a ideia, até o detalhamento que a produção precisa para montar.</p>
+        <div class="flow" aria-label="Como trabalhamos">
+          <span>Briefing</span><span class="arrow">→</span><span>Conceito</span><span class="arrow">→</span><span>Planta</span><span class="arrow">→</span><span>Modelagem 3D</span><span class="arrow">→</span><span>Render</span><span class="arrow">→</span><span>Memorial descritivo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Serviços</h2>
+        <p>Projetos de cenografia para todo tipo de ativação, de um PDV a uma arena de festival.</p>
+      </div>
+      <div class="services">
+        <div class="svc"><span class="tag">Festivais e ativações</span><h3>Cenografia para eventos</h3><p>Estandes, arenas e espaços instagramáveis para festivais como The Town e Rock in Rio.</p></div>
+        <div class="svc"><span class="tag">Corporativo</span><h3>Convenções e palcos</h3><p>Palco, plateia, cenário e ambientação para convenções, summits e fóruns.</p></div>
+        <div class="svc"><span class="tag">Varejo</span><h3>PDV e showroom</h3><p>Pontos de venda, salas VIP e showrooms pensados para a marca e para a montagem.</p></div>
+        <div class="svc"><span class="tag">Visualização</span><h3>3D e render fotorrealista</h3><p>Imagens e passeios em tempo real (Unreal Engine) para aprovar o projeto com o cliente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="cases">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Cases</h2>
+        <p>Tudo o que é publicado no nosso Behance entra aqui automaticamente. Cada projeto abre a página com todas as imagens.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar por tipo" id="filters"></div>
+      <div class="featured" id="featured"></div>
+      <div id="archive"><p class="arch-title">Arquivo</p><ul class="index" id="index"></ul></div>
+      <p class="count" id="count"></p>
+    </div>
+  </section>
+
+  <section class="block" id="contato" style="border-top:0;padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Vamos dar forma à sua próxima <em>ideia.</em></h2>
+          <p>Conte sobre o evento, a marca e o prazo. Retornamos o mais breve possível.</p>
+        </div>
+        <div class="c-list">
+          <div class="c-item"><small>E-mail</small><div class="c-row"><a href="mailto:felipe@fevieira.com">felipe@fevieira.com</a><button class="copy" type="button" data-copy="felipe@fevieira.com">Copiar</button></div></div>
+          <div class="c-item"><small>WhatsApp</small><div class="c-row"><a href="https://wa.me/5511942465027">+55 11 94246-5027</a><button class="copy" type="button" data-copy="+55 11 94246-5027">Copiar</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© FE. Estúdio Criativo</span>
+  <span>Cenografia · Marcas · Experiências</span>
+</footer>
+
+<script>
+/* ============================================================
+   Os cases vêm de projects.json, que a rotina diária atualiza com
+   tudo o que for publicado no Behance (scripts/sync-behance.mjs).
+   ============================================================ */
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const NEW_DAYS = 60;
+let list = [], active = "Todos";
+
+const sortKey = p => (p.published || `${p.year}-01-01`);
+const isNew = p => p.published && (Date.now() - new Date(p.published)) / 864e5 <= NEW_DAYS;
+const label = p => p.title ? `${p.client}: ${p.title}` : p.client;
+
+function tile(p, shape){
+  return `<a class="tile ${shape}" href="${esc(p.url)}" target="_blank" rel="noopener"><img src="${esc(p.img)}" alt="${esc(label(p))}"><span class="cap">${esc(p.client)}</span></a>`;
+}
+function renderMosaic(all){
+  const pics = all.filter(p => p.img).sort((a,b) => (b.featured?1:0)-(a.featured?1:0) || sortKey(b).localeCompare(sortKey(a))).slice(0,6);
+  if (pics.length < 2) return;
+  const shapes = ["t-tall","t-wide","t-tall","t-wide","t-tall","t-wide"];
+  const fill = (arr, off) => { let out = []; while (out.length < 4) out = out.concat(arr); return out.map((p,i)=>tile(p,shapes[(i*2+off)%6])).join(""); };
+  const a = fill(pics.filter((_,i)=>i%2===0), 0);
+  const b = fill(pics.filter((_,i)=>i%2===1), 1);
+  document.getElementById("colA").innerHTML = a + a;
+  document.getElementById("colB").innerHTML = b + b;
+}
+function renderFilters(){
+  const types = ["Todos", ...new Set(list.map(p => p.type || "Projetos"))];
+  document.getElementById("filters").innerHTML = types.map(t => `<button type="button" aria-pressed="${t===active}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+}
+function renderCases(){
+  const rows = list.filter(p => active==="Todos" || (p.type||"Projetos")===active)
+                   .sort((a,b) => sortKey(b).localeCompare(sortKey(a)));
+  const withPic = rows.filter(p => p.img), noPic = rows.filter(p => !p.img);
+  document.getElementById("featured").innerHTML = withPic.map(p => `
+    <a class="feat" href="${esc(p.url)}" target="_blank" rel="noopener">
+      <span class="tile"><img src="${esc(p.img)}" alt="${esc(label(p))}" loading="lazy">${isNew(p)?'<span class="new">Novo</span>':''}</span>
+      <span class="meta"><b>${esc(p.client)}</b><span>${esc(p.type||"Projetos")} · ${p.year}</span></span>
+    </a>`).join("");
+  document.getElementById("index").innerHTML = noPic.map(p => `
+    <li><a href="${esc(p.url)}" target="_blank" rel="noopener">
+      <span class="yr">${p.year}</span><span class="cl">${esc(p.client)}</span><span class="pj">${esc(p.title)}</span><span class="ty">${esc(p.type||"Projetos")}</span><span class="go" aria-hidden="true">↗</span>
+    </a></li>`).join("");
+  document.getElementById("archive").hidden = noPic.length === 0;
+  document.getElementById("count").textContent = `${rows.length} ${rows.length===1?"projeto":"projetos"}`;
+}
+document.getElementById("filters").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  active = b.dataset.t; renderFilters(); renderCases();
+});
+
+fetch("projects.json", {cache:"no-store"})
+  .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data => {
+    const all = data.projects || [];
+    list = all.filter(p => !p.hideInIndex);
+    renderMosaic(all); renderFilters(); renderCases();
+    document.getElementById("statCount").textContent = list.length;
+  })
+  .catch(() => {
+    document.getElementById("count").textContent = "Não foi possível carregar os projetos agora. Recarregue a página.";
+  });
+
+/* menu ativo conforme a rolagem */
+const links = [...document.querySelectorAll("nav.menu a:not(.btn-ghost)")];
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    links.forEach(a => a.toggleAttribute("aria-current", a.getAttribute("href")==="#"+en.target.id));
+  });
+},{rootMargin:"-45% 0px -50% 0px"});
+["home","sobre","servicos","cases"].forEach(id => obs.observe(document.getElementById(id)));
+
+/* copiar contato */
+document.querySelectorAll(".copy").forEach(btn => btn.addEventListener("click", () => {
+  const txt = btn.dataset.copy;
+  const done = () => { btn.textContent = "Copiado"; setTimeout(()=>btn.textContent="Copiar",1600); };
+  try{
+    navigator.clipboard.writeText(txt).then(done).catch(() => selectText(btn));
+  }catch(_){ selectText(btn); }
+}));
+function selectText(btn){
+  const a = btn.parentElement.querySelector("a");
+  const r = document.createRange(); r.selectNodeContents(a);
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+}
+</script>
+
+</body>
+</html>

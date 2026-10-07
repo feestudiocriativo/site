@@ -1,0 +1,304 @@
+{
+  "updated": null,
+  "projects": [
+    {
+      "client": "Mercado Livre",
+      "title": "Mercado Livre Arena",
+      "year": 2025,
+      "type": "Festival",
+      "img": "img/mercadolivre.jpg",
+      "url": "https://fevieira.com/work",
+      "featured": true,
+      "source": "manual"
+    },
+    {
+      "client": "TV Globo · Globoplay · Multishow",
+      "title": "The Town",
+      "year": 2025,
+      "type": "Festival",
+      "img": "img/globoplay.jpg",
+      "url": "https://fevieira.com/tv-globo-globoplay-multishow-the-town-2023-sp",
+      "featured": true,
+      "source": "manual"
+    },
+    {
+      "client": "UFC",
+      "title": "Octógono e ativação",
+      "year": 2025,
+      "type": "Ativação",
+      "img": "img/ufc.jpg",
+      "url": "https://fevieira.com/work",
+      "featured": true,
+      "source": "manual"
+    },
+    {
+      "client": "Guaraná + Senna",
+      "title": "Ativação Ayrton Senna, Ibirapuera",
+      "year": 2025,
+      "type": "Ativação",
+      "img": "img/orgulho.jpg",
+      "url": "https://fevieira.com/guarana-senna-ativacao-ayrton-senna-ibirapuera-sp",
+      "featured": true,
+      "source": "manual"
+    },
+    {
+      "client": "Evento corporativo",
+      "title": "Plateia e palco",
+      "year": 2025,
+      "type": "Corporativo",
+      "img": "img/greenroom.jpg",
+      "url": "https://fevieira.com/work",
+      "featured": true,
+      "hideInIndex": true,
+      "source": "manual"
+    },
+    {
+      "client": "Bubbaloo",
+      "title": "Baile de Halloween Sephora",
+      "year": 2025,
+      "type": "Ativação",
+      "url": "https://fevieira.com/bubbaloo-baile-de-halloween-sephora",
+      "source": "manual"
+    },
+    {
+      "client": "Tostitos",
+      "title": "Rock in Rio 2024",
+      "year": 2024,
+      "type": "Festival",
+      "url": "https://fevieira.com/tostitos-rock-in-rio-2024",
+      "source": "manual"
+    },
+    {
+      "client": "O Boticário",
+      "title": "Convenção de Franqueados",
+      "year": 2023,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/o-boticario-convencao-de-franqueados-2023",
+      "source": "manual"
+    },
+    {
+      "client": "Chocolates Brasil Cacau",
+      "title": "QG de Páscoa",
+      "year": 2022,
+      "type": "Ativação",
+      "url": "https://fevieira.com/chocolates-brasil-cacau-qg-de-pascoa",
+      "source": "manual"
+    },
+    {
+      "client": "Spaten",
+      "title": "Spaten Garten",
+      "year": 2022,
+      "type": "Ativação",
+      "url": "https://fevieira.com/spaten-spaten-garten",
+      "source": "manual"
+    },
+    {
+      "client": "Grupo Boticário",
+      "title": "Convenção 2022",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/grupo-boticario-convencao-2022",
+      "source": "manual"
+    },
+    {
+      "client": "Spaten",
+      "title": "São Paulo Oktoberfest",
+      "year": 2022,
+      "type": "Festival",
+      "url": "https://fevieira.com/spaten-sao-paulo-oktoberfest-2022",
+      "source": "manual"
+    },
+    {
+      "client": "Budweiser",
+      "title": "This Bud's for you, Unreal Engine",
+      "year": 2022,
+      "type": "3D / Real-time",
+      "url": "https://fevieira.com/this-buds-for-you-unreal-engine",
+      "source": "manual"
+    },
+    {
+      "client": "Huawei",
+      "title": "Summit 2022",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/huawei-summit-2022",
+      "source": "manual"
+    },
+    {
+      "client": "Experience Club",
+      "title": "CEO Forum",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/experience-club-ceo-forum",
+      "source": "manual"
+    },
+    {
+      "client": "Grupo CRM",
+      "title": "Convenção 2022",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/grupo-crm-convencao-2022",
+      "source": "manual"
+    },
+    {
+      "client": "Samsung",
+      "title": "Showroom",
+      "year": 2022,
+      "type": "PDV / Showroom",
+      "url": "https://fevieira.com/samsung-showroom",
+      "source": "manual"
+    },
+    {
+      "client": "The Boys",
+      "title": "Première SP",
+      "year": 2022,
+      "type": "Ativação",
+      "url": "https://fevieira.com/the-boys-premiere-sp",
+      "source": "manual"
+    },
+    {
+      "client": "Coca-Cola",
+      "title": "Convenção",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/coca-cola-convencao",
+      "source": "manual"
+    },
+    {
+      "client": "Experience Club",
+      "title": "Confraria",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/experience-club-confraria",
+      "source": "manual"
+    },
+    {
+      "client": "Budweiser",
+      "title": "PDV",
+      "year": 2022,
+      "type": "PDV / Showroom",
+      "url": "https://fevieira.com/pdv-budweiser",
+      "source": "manual"
+    },
+    {
+      "client": "Bradesco",
+      "title": "Cine Bradesco",
+      "year": 2022,
+      "type": "Ativação",
+      "url": "https://fevieira.com/cine-bradesco",
+      "source": "manual"
+    },
+    {
+      "client": "Restaurante C.",
+      "title": "Ambientação",
+      "year": 2022,
+      "type": "Interiores",
+      "url": "https://fevieira.com/restaurante-c",
+      "source": "manual"
+    },
+    {
+      "client": "Budweiser",
+      "title": "VIP Room",
+      "year": 2022,
+      "type": "PDV / Showroom",
+      "url": "https://fevieira.com/budweiser-vip-room",
+      "source": "manual"
+    },
+    {
+      "client": "Powersafe",
+      "title": "Estande",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/powersafe",
+      "source": "manual"
+    },
+    {
+      "client": "Isaac",
+      "title": "Estande",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/isaac",
+      "source": "manual"
+    },
+    {
+      "client": "Unico",
+      "title": "Estande",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/unico",
+      "source": "manual"
+    },
+    {
+      "client": "Camozzi Automation",
+      "title": "Estande",
+      "year": 2022,
+      "type": "Corporativo",
+      "url": "https://fevieira.com/camozzi-automation",
+      "source": "manual"
+    },
+    {
+      "client": "Mattel",
+      "title": "Bedroom",
+      "year": 2021,
+      "type": "Interiores",
+      "url": "https://fevieira.com/mattel-bedroom",
+      "source": "manual"
+    },
+    {
+      "client": "House S/R",
+      "title": "Son's Bedroom",
+      "year": 2021,
+      "type": "Interiores",
+      "url": "https://fevieira.com/sons-bedroom-house-sr",
+      "source": "manual"
+    },
+    {
+      "client": "House S & R",
+      "title": "Child's Bathroom",
+      "year": 2021,
+      "type": "Interiores",
+      "url": "https://fevieira.com/childs-bathroom-house-s-r",
+      "source": "manual"
+    },
+    {
+      "client": "Gourmet I",
+      "title": "Espaço gourmet",
+      "year": 2021,
+      "type": "Interiores",
+      "url": "https://fevieira.com/gourmet-i",
+      "source": "manual"
+    },
+    {
+      "client": "Happy Halloween!",
+      "title": "Ilustração 3D",
+      "year": 2021,
+      "type": "3D / Real-time",
+      "url": "https://fevieira.com/happy-halloween",
+      "source": "manual"
+    },
+    {
+      "client": "La Cutanée",
+      "title": "Projeto",
+      "year": 2020,
+      "type": "Interiores",
+      "url": "https://fevieira.com/la-cutanee",
+      "source": "manual"
+    },
+    {
+      "client": "Kitchen",
+      "title": "Cozinha",
+      "year": 2017,
+      "type": "Interiores",
+      "url": "https://fevieira.com/kitchen",
+      "source": "manual"
+    },
+    {
+      "client": "Kitchen II",
+      "title": "Cozinha",
+      "year": 2017,
+      "type": "Interiores",
+      "url": "https://fevieira.com/kitchen-ii",
+      "source": "manual"
+    }
+  ]
+}
