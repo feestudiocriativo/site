@@ -1,5 +1,5 @@
 {
-  "updated": null,
+  "updated": "2026-10-07T16:13:17.707Z",
   "projects": [
     {
       "client": "Mercado Livre",
@@ -19,7 +19,8 @@
       "img": "img/globoplay.jpg",
       "url": "https://fevieira.com/tv-globo-globoplay-multishow-the-town-2023-sp",
       "featured": true,
-      "source": "manual"
+      "source": "manual",
+      "behance": "https://www.behance.net/gallery/219024893/TV-Globo-Globoplay-Multishow-The-Town-2023-SP"
     },
     {
       "client": "UFC",
@@ -98,7 +99,9 @@
       "year": 2022,
       "type": "Corporativo",
       "url": "https://fevieira.com/grupo-boticario-convencao-2022",
-      "source": "manual"
+      "source": "manual",
+      "behance": "https://www.behance.net/gallery/147918123/Grupo-Boticario-Convencao-2022",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/a34d98147918123.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg"
     },
     {
       "client": "Spaten",
@@ -106,7 +109,9 @@
       "year": 2022,
       "type": "Festival",
       "url": "https://fevieira.com/spaten-sao-paulo-oktoberfest-2022",
-      "source": "manual"
+      "source": "manual",
+      "behance": "https://www.behance.net/gallery/158215705/Spaten-Sao-Paulo-Oktoberfest-2022",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/18fea5158215705.Y3JvcCwyODc2LDIyNTAsNTYyLDA.jpg"
     },
     {
       "client": "Budweiser",
@@ -122,7 +127,9 @@
       "year": 2022,
       "type": "Corporativo",
       "url": "https://fevieira.com/huawei-summit-2022",
-      "source": "manual"
+      "source": "manual",
+      "behance": "https://www.behance.net/gallery/154635569/Huawei-Summit-2022",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/61788a154635569.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg"
     },
     {
       "client": "Experience Club",
@@ -130,7 +137,9 @@
       "year": 2022,
       "type": "Corporativo",
       "url": "https://fevieira.com/experience-club-ceo-forum",
-      "source": "manual"
+      "source": "manual",
+      "behance": "https://www.behance.net/gallery/145963243/Experience-Club-CEO-FORUM",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/5e8b2e145963243.Y3JvcCwyMTU4LDE2ODgsNDIyLDA.jpg"
     },
     {
       "client": "Grupo CRM",
@@ -202,7 +211,9 @@
       "year": 2022,
       "type": "PDV / Showroom",
       "url": "https://fevieira.com/budweiser-vip-room",
-      "source": "manual"
+      "source": "manual",
+      "behance": "https://www.behance.net/gallery/146005977/Budweiser-Vip-Room",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/b33a66146005977.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg"
     },
     {
       "client": "Powersafe",
@@ -299,6 +310,72 @@
       "type": "Interiores",
       "url": "https://fevieira.com/kitchen-ii",
       "source": "manual"
+    },
+    {
+      "client": "Guaraná + Senna | Ativação Ayrton Senna | SP",
+      "title": "",
+      "year": 2025,
+      "type": "Ativação",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/cb0c91218374305.Y3JvcCw5MjQsNzIzLDIzOCwzMg.jpg",
+      "url": "https://www.behance.net/gallery/218374305/Guarana-Senna-Ativacao-Ayrton-Senna-SP",
+      "behance": "https://www.behance.net/gallery/218374305/Guarana-Senna-Ativacao-Ayrton-Senna-SP",
+      "published": "2025-02-03",
+      "source": "behance"
+    },
+    {
+      "client": "Bubbaloo | Baile de Halloween Sephora | SP",
+      "title": "",
+      "year": 2025,
+      "type": "Ativação",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/e7adc8218372855.Y3JvcCwxODc2LDE0NjcsMCwzMTU.jpg",
+      "url": "https://www.behance.net/gallery/218372855/Bubbaloo-Baile-de-Halloween-Sephora-SP",
+      "behance": "https://www.behance.net/gallery/218372855/Bubbaloo-Baile-de-Halloween-Sephora-SP",
+      "published": "2025-02-03",
+      "source": "behance"
+    },
+    {
+      "client": "Tostitos | Rock in Rio 2024 | Rio de Janeiro",
+      "title": "",
+      "year": 2024,
+      "type": "Festival",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/22ffde218695871.Y3JvcCwxNDAwLDEwOTUsMCwyNDI.jpg",
+      "url": "https://www.behance.net/gallery/218695871/Tostitos-Rock-in-Rio-2024-Rio-de-Janeiro",
+      "behance": "https://www.behance.net/gallery/218695871/Tostitos-Rock-in-Rio-2024-Rio-de-Janeiro",
+      "published": "2025-02-07",
+      "source": "behance"
+    },
+    {
+      "client": "O Boticário | Convenção de Franqueados 2023 | PR",
+      "title": "",
+      "year": 2023,
+      "type": "Corporativo",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/65d77d218749549.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg",
+      "url": "https://www.behance.net/gallery/218749549/O-Boticario-Convencao-de-Franqueados-2023-PR",
+      "behance": "https://www.behance.net/gallery/218749549/O-Boticario-Convencao-de-Franqueados-2023-PR",
+      "published": "2025-02-07",
+      "source": "behance"
+    },
+    {
+      "client": "Chocolates Brasil Cacau | QG de Páscoa | SP",
+      "title": "",
+      "year": 2022,
+      "type": "Ativação",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/c04a95146772205.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg",
+      "url": "https://www.behance.net/gallery/146772205/Chocolates-Brasil-Cacau-QG-de-Pascoa-SP",
+      "behance": "https://www.behance.net/gallery/146772205/Chocolates-Brasil-Cacau-QG-de-Pascoa-SP",
+      "published": "2022-06-24",
+      "source": "behance"
+    },
+    {
+      "client": "Spaten | Spaten Garten 2022 | SP",
+      "title": "",
+      "year": 2022,
+      "type": "Ativação",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/45c06b154050101.Y3JvcCwxOTIwLDE1MDEsMCwyMDk.jpg",
+      "url": "https://www.behance.net/gallery/154050101/Spaten-Spaten-Garten-2022-SP",
+      "behance": "https://www.behance.net/gallery/154050101/Spaten-Spaten-Garten-2022-SP",
+      "published": "2022-10-03",
+      "source": "behance"
     }
   ]
 }
