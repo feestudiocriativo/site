@@ -150,6 +150,9 @@ h2 em{font-style:normal;color:var(--accent)}
 .c-row a:hover{color:var(--accent)}
 .copy{font:inherit;font-size:13px;font-weight:600;background:none;color:var(--paper);border:1px solid #4a4a52;border-radius:999px;padding:6px 14px;cursor:pointer;white-space:nowrap}
 .copy:hover{border-color:var(--paper)}
+.c-row a.copy{font-family:var(--f-body);font-size:13px;text-decoration:none;user-select:none;word-break:normal}
+.copy.wa{background:#25D366;border-color:#25D366;color:#0b0b0b}
+.copy.wa:hover{background:#1ebe5a;border-color:#1ebe5a;color:#0b0b0b}
 footer{padding-block:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
 
 /* ---------- responsive ---------- */
@@ -272,7 +275,7 @@ footer{padding-block:40px;display:flex;justify-content:space-between;flex-wrap:w
         </div>
         <div class="c-list">
           <div class="c-item"><small>E-mail</small><div class="c-row"><a href="mailto:atendimento@fevieira.com">atendimento@fevieira.com</a><button class="copy" type="button" data-copy="atendimento@fevieira.com">Copiar</button></div></div>
-          <div class="c-item"><small>WhatsApp</small><div class="c-row"><a href="https://wa.me/5511942465027">+55 11 94246-5027</a><button class="copy" type="button" data-copy="+55 11 94246-5027">Copiar</button></div></div>
+          <div class="c-item"><small>WhatsApp</small><div class="c-row"><a href="https://wa.me/5511942465027?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20FE.%20Est%C3%BAdio%20Criativo%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">+55 11 94246-5027</a><a class="copy wa" href="https://wa.me/5511942465027?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20FE.%20Est%C3%BAdio%20Criativo%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Abrir WhatsApp ↗</a></div></div>
         </div>
       </div>
     </div>
@@ -357,19 +360,27 @@ const obs = new IntersectionObserver(entries => {
 },{rootMargin:"-45% 0px -50% 0px"});
 ["home","sobre","servicos","cases"].forEach(id => obs.observe(document.getElementById(id)));
 
-/* copiar contato */
-document.querySelectorAll(".copy").forEach(btn => btn.addEventListener("click", () => {
-  const txt = btn.dataset.copy;
-  const done = () => { btn.textContent = "Copiado"; setTimeout(()=>btn.textContent="Copiar",1600); };
-  try{
-    navigator.clipboard.writeText(txt).then(done).catch(() => selectText(btn));
-  }catch(_){ selectText(btn); }
-}));
-function selectText(btn){
-  const a = btn.parentElement.querySelector("a");
-  const r = document.createRange(); r.selectNodeContents(a);
-  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+/* copiar contato: funciona com ou sem https */
+function copyText(txt){
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(txt).then(() => true).catch(() => legacyCopy(txt));
+  }
+  return Promise.resolve(legacyCopy(txt));
 }
+function legacyCopy(txt){
+  const ta = document.createElement("textarea");
+  ta.value = txt; ta.setAttribute("readonly", "");
+  ta.style.position = "fixed"; ta.style.top = "-1000px"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, txt.length);
+  let ok = false; try { ok = document.execCommand("copy"); } catch (_) {}
+  ta.remove(); return ok;
+}
+document.querySelectorAll("button.copy").forEach(btn => btn.addEventListener("click", () => {
+  copyText(btn.dataset.copy).then(ok => {
+    btn.textContent = ok ? "Copiado ✓" : "Selecione e copie";
+    setTimeout(() => btn.textContent = "Copiar", 1800);
+  });
+}));
 </script>
 
 </body>
