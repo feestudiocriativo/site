@@ -99,7 +99,9 @@ for (const p of feed) {
   if (existing) {
     let changed = false;
     if (!existing.behance) { existing.behance = p.link; changed = true; }
-    if (!existing.img && p.img) { existing.img = p.img; changed = true; }
+    // A capa do site é sempre a capa do projeto no Behance
+    // (a menos que o projeto tenha "keepImg": true no projects.json).
+    if (p.img && existing.img !== p.img && !existing.keepImg) { existing.img = p.img; changed = true; }
     if (isOldSite(existing.url)) { existing.url = p.link; changed = true; }
     if (!existing.place && place) { existing.place = place; changed = true; }
     if (changed) updated++;
