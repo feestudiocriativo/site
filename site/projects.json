@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-07T21:26:05.096Z",
+  "updated": "2026-10-08T00:05:28.205Z",
   "projects": [
     {
       "client": "TV Globo · Globoplay · Multishow",
       "title": "The Town",
       "year": 2025,
       "type": "Festival",
-      "img": "img/globoplay.jpg",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/7350f5219024893.Y3JvcCwxNDAwLDEwOTUsMCw0ODg.jpg",
       "url": "https://www.behance.net/gallery/219024893/TV-Globo-Globoplay-Multishow-The-Town-2023-SP",
       "featured": true,
       "source": "manual",
@@ -18,7 +18,7 @@
       "title": "Ativação Ayrton Senna, Ibirapuera",
       "year": 2025,
       "type": "Ativação",
-      "img": "img/orgulho.jpg",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/cb0c91218374305.Y3JvcCw5MjQsNzIzLDIzOCwzMg.jpg",
       "url": "https://www.behance.net/gallery/218374305/Guarana-Senna-Ativacao-Ayrton-Senna-SP",
       "featured": true,
       "source": "manual",
