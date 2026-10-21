@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T09:42:37.286Z",
+  "updated": "2026-10-21T09:44:18.633Z",
   "projects": [
     {
       "client": "TV Globo · Globoplay · Multishow",
@@ -129,6 +129,18 @@
       "source": "manual",
       "behance": "https://www.behance.net/gallery/146005977/Budweiser-Vip-Room",
       "img": "https://mir-s3-cdn-cf.behance.net/projects/808/b33a66146005977.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg"
+    },
+    {
+      "client": "Kit Kat",
+      "title": "Shell Select",
+      "place": "Fórmula 1",
+      "year": 2026,
+      "type": "Projetos",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/a2dbd3257369923.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
+      "url": "https://www.behance.net/gallery/257369923/Kit-Kat-Shell-Select-Formula-1",
+      "behance": "https://www.behance.net/gallery/257369923/Kit-Kat-Shell-Select-Formula-1",
+      "published": "2026-10-20",
+      "source": "behance"
     }
   ],
   "profile": "https://www.behance.net/feestudiocriativo"
