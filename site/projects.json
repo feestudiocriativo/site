@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T09:44:18.633Z",
+  "updated": "2026-10-22T09:46:10.835Z",
   "projects": [
     {
       "client": "TV Globo · Globoplay · Multishow",
@@ -140,6 +140,18 @@
       "url": "https://www.behance.net/gallery/257369923/Kit-Kat-Shell-Select-Formula-1",
       "behance": "https://www.behance.net/gallery/257369923/Kit-Kat-Shell-Select-Formula-1",
       "published": "2026-10-20",
+      "source": "behance"
+    },
+    {
+      "client": "Localiza",
+      "title": "Convenção de Líderes",
+      "place": "São Paulo, Atibaia",
+      "year": 2026,
+      "type": "Corporativo",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/aea684257412667.Y3JvcCwyOTQ1LDIzMDQsNTc2LDA.jpg",
+      "url": "https://www.behance.net/gallery/257412667/Localiza-Convencao-de-Lideres-Sao-Paulo-Atibaia",
+      "behance": "https://www.behance.net/gallery/257412667/Localiza-Convencao-de-Lideres-Sao-Paulo-Atibaia",
+      "published": "2026-10-21",
       "source": "behance"
     }
   ],
