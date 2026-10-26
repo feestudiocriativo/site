@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T09:54:11.831Z",
+  "updated": "2026-10-26T18:10:02.146Z",
   "projects": [
     {
       "client": "TV Globo · Globoplay · Multishow",
@@ -152,6 +152,18 @@
       "url": "https://www.behance.net/gallery/257412667/Localiza-Convencao-de-Lideres-Sao-Paulo-Atibaia",
       "behance": "https://www.behance.net/gallery/257412667/Localiza-Convencao-de-Lideres-Sao-Paulo-Atibaia",
       "published": "2026-10-21",
+      "source": "behance"
+    },
+    {
+      "client": "Paramount+ UFC",
+      "title": "CCXP 2025",
+      "place": "São Paulo",
+      "year": 2025,
+      "type": "Corporativo",
+      "img": "https://mir-s3-cdn-cf.behance.net/projects/808/153e63257472341.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
+      "url": "https://www.behance.net/gallery/257472341/Paramount-UFC-CCXP-2025-Sao-Paulo",
+      "behance": "https://www.behance.net/gallery/257472341/Paramount-UFC-CCXP-2025-Sao-Paulo",
+      "published": "2026-10-26",
       "source": "behance"
     }
   ],
